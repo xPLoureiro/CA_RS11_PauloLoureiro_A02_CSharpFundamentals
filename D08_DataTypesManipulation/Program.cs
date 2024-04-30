@@ -27,6 +27,7 @@ namespace D08_DataTypesManipulation
             string cursoCompleto01;     // string interpolation
             string cursoCompleto02;     // string.join
             string cursoCompleto03;     // string.concat
+            string cursoCompleto05;     // string.format
             StringBuilder cursoCompleto04 = new StringBuilder();
             #endregion
 
@@ -48,7 +49,7 @@ namespace D08_DataTypesManipulation
             #region Manipulação de strings
 
             #region Clássico: evitar se houver concatenação de strings nas variáveis
-            // Operador +
+            // Operador + NÃO USAR!!! ESTOU A GERAR NOVO OBJETO
             cursoCompleto00 = area + ", " + categoria + ", " + curso;
 
             // String interpolation
@@ -59,6 +60,10 @@ namespace D08_DataTypesManipulation
             
             // string.Join()
             cursoCompleto02 = string.Join(", ", area, categoria, curso);            // T-SQL Concat_Ws()
+
+            // string.Format()
+            cursoCompleto05 = string.Format("Curso: {0} - {1} - {2}", area, categoria, curso);
+
             #endregion
 
             #region Ótima - classe StringBuilder
@@ -76,6 +81,7 @@ namespace D08_DataTypesManipulation
             Utility.WriteMessage($"Esquerda (fixo): {cursoCompleto03.Substring(0, 11)}");        // Left; Informática
             Utility.WriteMessage($"Esquerda (dinâmico): {cursoCompleto02.Substring(0, cursoCompleto02.IndexOf(","))}");
             Utility.WriteMessage($"Curso: {cursoCompleto04}");
+            Utility.WriteMessage($"{cursoCompleto05}");
             #endregion
 
             #endregion
@@ -83,10 +89,11 @@ namespace D08_DataTypesManipulation
             #region Manipulação de numbers
             Utility.WriteTitle("manipulação de numbers", "\n\n\n");
             Utility.WriteMessage($"Mínimo: {Math.Min(valor01, valor02)}");
-            Utility.WriteMessage($"Mínimo: {Math.Max(valor01, valor02)}");
+            Utility.WriteMessage($"Máximo: {Math.Max(valor01, valor02)}");
             Utility.WriteMessage($"Absoluto: {Math.Abs(valor04)}");
             Utility.WriteMessage($"Arredondamento: {Math.Round(valor03)}");
             Utility.WriteMessage($"Raíz quadrada: {Math.Sqrt(valor06)}");
+            
 
             #endregion
 

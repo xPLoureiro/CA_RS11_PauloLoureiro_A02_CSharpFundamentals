@@ -109,11 +109,21 @@ namespace D06_DataTypes
             //turma[3, 1] = Convert.ToString(Console.Read());
 
             // Listar a matriz usando 2 FOR
-
-            for (string i = 0; i < numeros.Length; i++)    // usamos tamanho dinâmico
+            // Percorre as linhas
+            for (int l = 0; l < 4; l++)    // usamos tamanho dinâmico
             {
-                Utility.WriteMessage($"Valor {i}: {numeros[i]}");
+                // Percorre as colunas
+                for (int c = 0; c < 2; c++)    // usamos tamanho dinâmico
+                {
+                    // ir ver exemplos
+
+
+                }
+
+
+
             }
+
 
 
 

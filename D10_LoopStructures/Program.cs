@@ -18,7 +18,7 @@ namespace D10_LoopStructures
             string name = string.Empty;
             #endregion
 
-            #region WHILE (enquanto)
+            #region WHILE (enquanto acondição for verdadeira)
             // O teste é feito no início
             // Não garante que seja feito uma única vez
 
@@ -69,15 +69,36 @@ namespace D10_LoopStructures
             Utility.TerminateConsole();
             #endregion
 
-            #region FOREACH (para cada elemento)
+            #region FOREACH (para cada elemento; usado com arrays e collections)
             // Percorrer todos os elementos dum array ou duma collection
 
-            int[] numeros = { 3, 10, 1, 20, 0, 4 };     // LINQ
-            
+            int[] numeros = { 3, 10, 1, 20, 0, 4 };
+
+            string[] palavras =
+            {
+                "a",
+                "b",
+                "c"
+            };
+
+            int[] valores = new int[4];
+
+            valores[0] = 10;
+            valores[1] = 100;
+            valores[2] = 1000;
+
             foreach (int item in numeros)
             {
                 Utility.WriteMessage(item.ToString(), "\n");
             }
+
+            // strongly typed (variável fortemente tipada)
+
+            foreach (string item in palavras)
+            {
+                Utility.WriteMessage(item);
+            }
+
             #endregion
 
             Utility.TerminateConsole();

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{332E3A5E-8954-41A0-AAD5-828BCC8DFF1D}</ProjectGuid>
+    <ProjectGuid>{BCBE1257-E9F1-4BE3-B1E5-BE5AB59A44BE}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>D07_DataTypesConversion</RootNamespace>
-    <AssemblyName>D07_DataTypesConversion</AssemblyName>
+    <RootNamespace>D14_ErrorHandling</RootNamespace>
+    <AssemblyName>D14_ErrorHandling</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

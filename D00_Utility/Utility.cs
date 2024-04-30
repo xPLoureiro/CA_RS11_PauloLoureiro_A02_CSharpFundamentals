@@ -20,7 +20,7 @@ namespace D00_Utility
         }
 
         // parameter vs argument
-        public static void WriteTitle(string title)
+        public static void WriteTitle(string title, string beginTitle = "")
         {
 
             Console.ForegroundColor = ConsoleColor.Green;
@@ -58,6 +58,19 @@ namespace D00_Utility
             Console.ForegroundColor = ConsoleColor.Red;
 
             Console.Write("\n\n\n\nPrime qualquer tecla para terminares.");
+
+            Console.ForegroundColor = ConsoleColor.White;
+
+            Console.ReadKey();
+
+            Console.Clear();
+        }
+
+        public static void PauseConsole()
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+
+            Console.Write("\n\n\n\nPrime qualquer tecla para continuar.");
 
             Console.ForegroundColor = ConsoleColor.White;
 

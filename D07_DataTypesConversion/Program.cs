@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MRS_D02_DataTypesConversion
+namespace D07_DataTypesConversion
 {
 
     internal class Program
@@ -50,8 +50,8 @@ namespace MRS_D02_DataTypesConversion
             #endregion
 
             #region Método number.Parse(): converter string em número
-            Console.WriteLine(int01 + int.Parse(string01));
-            // Console.WriteLine(int01 + int.Parse(string03));     // Erro!
+            Console.WriteLine(int01 + int.Parse(string01));        // 10+ "1"
+            // Console.WriteLine(int01 + int.Parse(string03));     // 10 + "C#" --> Erro!
             Console.WriteLine(long01 + long.Parse(string01));
             Console.WriteLine(float01 + float.Parse(string02));
             Console.WriteLine(double01 + double.Parse(string02));

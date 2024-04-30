@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{332E3A5E-8954-41A0-AAD5-828BCC8DFF1D}</ProjectGuid>
+    <ProjectGuid>{CAF4AAD8-CAC6-4240-B499-491FCA719E3A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>D07_DataTypesConversion</RootNamespace>
-    <AssemblyName>D07_DataTypesConversion</AssemblyName>
+    <RootNamespace>D13_AccessModifiers</RootNamespace>
+    <AssemblyName>D13_AccessModifiers</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -45,9 +45,16 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\D00_Utility\D00_Utility.csproj">
+      <Project>{13efb389-4b05-4818-a800-f5d5752eedc2}</Project>
+      <Name>D00_Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

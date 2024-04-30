@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,6 +36,9 @@ namespace D09_ConditionalStructures
             {
                 Utility.WriteMessage("O número é 10.");
             }
+            if (numero != 2)
+                Utility.WriteMessage("O número não é 2.");
+
             #endregion
 
             #region If Else
@@ -71,15 +75,68 @@ namespace D09_ConditionalStructures
             #endregion
 
             #region Ifs Encadeados
+             
+             Utility.WriteTitle("Ifs encadeados");
+
+            if  (numero == 0) 
+            {
+                Utility.WriteMessage("O número é igual a 0.");
+            }
+            else
+            {
+                if (numero == 5)
+                {
+                    Utility.WriteMessage("O número é igual a 5.");
+                }
+                else
+                {
+                    if (numero == 10)
+                    {
+                        Utility.WriteMessage("O número é igual a 10.");
+                    }
+                    else
+                    {
+                        if (numero == 15)
+                        {
+                            Utility.WriteMessage("O número é igual a 15.");
+                        }
+                        else
+                        {
+                            Utility.WriteMessage("O número não é: 0, 5, 10, 15.");
+                        }
+                    }
+                }
+                    
+            }
 
             #endregion
 
             #region If ElseIf
-
+            // ver D04
             #endregion
 
             #region Switch
-            // ToDo MRS: Se o nº for entre 1 e 4 dizer o seu extendo
+            switch (numero)
+            {
+                case 0:
+                    Utility.WriteMessage("O número é igual a 0.");
+                    break;
+                case 5:
+                    Utility.WriteMessage("O número é igual a 5.");
+                    break;
+                case 10:
+                    Utility.WriteMessage("O número é igual a 10.");
+                    break;
+                case 15:
+                    Utility.WriteMessage("O número é igual a 15.");
+                    break;
+                default:    //else do if
+                    Utility.WriteMessage("O número não é: 0, 5, 10, 15.");
+                    break;
+            }
+
+          
+            // ToDo MRS: Se o nº for entre 1 e 4 dizer o seu extenso
             #endregion
 
             Utility.TerminateConsole();

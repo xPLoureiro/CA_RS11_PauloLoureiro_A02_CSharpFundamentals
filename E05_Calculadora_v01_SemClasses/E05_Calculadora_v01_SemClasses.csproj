@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{332E3A5E-8954-41A0-AAD5-828BCC8DFF1D}</ProjectGuid>
+    <ProjectGuid>{54A5CCCF-EE48-40B8-8DEF-6438AA25D7CE}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>D07_DataTypesConversion</RootNamespace>
-    <AssemblyName>D07_DataTypesConversion</AssemblyName>
+    <RootNamespace>E05_Calculadora_v01_SemClasses</RootNamespace>
+    <AssemblyName>E05_Calculadora_v01_SemClasses</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,6 +48,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="_notes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\D00_Utility\D00_Utility.csproj">
+      <Project>{13efb389-4b05-4818-a800-f5d5752eedc2}</Project>
+      <Name>D00_Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
