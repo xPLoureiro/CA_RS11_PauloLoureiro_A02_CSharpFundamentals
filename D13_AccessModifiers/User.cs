@@ -13,23 +13,23 @@ namespace D13_AccessModifiers
         private DateTime registrationDate;
 
         // Declarar uma propriedade usando Auto-implemented properties
-        public int Id { get; }      // read-only
-        public string Name { get; set; }
-        public string Department { get; set; }
+        internal int Id { get; }      // read-only
+        internal string Name { get; set; }
+        internal string Department { get; set; }
         // declarar uma propriedade usando Classic properties
-        public DateTime RegistrationDate
+        internal DateTime RegistrationDate
         {
             get { return registrationDate; }    // ler o valor da propriedade
             set { registrationDate = value; }   // escrever o valor da propriedade
         }
-        public string Username { get; set; }
-        public string Password { get; set; }
+        internal string Username { get; set; }
+        internal string Password { get; set; }
 
 
         // Constructors
 
         // Susbtituto do default constructor
-        public User()
+        internal User()
         {
             Id = 1;
             Name = string.Empty;
@@ -40,7 +40,7 @@ namespace D13_AccessModifiers
         }
 
         // 2º constructor com inserção de parâmetros obrigatórios
-        public User(int id, string name, string department, DateTime registrationDate, string username, string password)
+        internal User(int id, string name, string department, DateTime registrationDate, string username, string password)
         {
             Id = id;
             Name = name;
@@ -51,7 +51,7 @@ namespace D13_AccessModifiers
         }
 
         // Método para criar um usuário
-        public void CreateUser()
+        internal void CreateUser()
         {
             Utility.WriteTitle("Create user");
 
@@ -74,10 +74,10 @@ namespace D13_AccessModifiers
                     dataInserida = Console.ReadLine();
                     dataValida = DateTime.TryParse(dataInserida, out registrationDate);
 
-                    if (!dataValida)
-                    {
-                        Utility.WriteMessage("A data inválida, tenta novamente: ");
-                    }
+                    //if (!dataValida)
+                    //{
+                    //    Utility.WriteMessage("A data inválida, tenta novamente: ");
+                    //}
                 }
                 while (!dataValida);
 
@@ -94,12 +94,12 @@ namespace D13_AccessModifiers
 
         // Todo MRS: terminar o método mostrando as labels e indentar corretamente
         // Método para mostrar o usuário
-        public void ListUser(string beginTitle = "")
+        internal void ListUser(string beginTitle = "")
         {
-        Utility.WriteMessage(Name, beginTitle);
-        Utility.WriteMessage(Department, beginTitle);
-        Utility.WriteMessage(Username, beginTitle);
-        Utility.WriteMessage(Password, beginTitle);
+            Utility.WriteMessage(Name, beginTitle);
+            Utility.WriteMessage(Department, beginTitle);
+            Utility.WriteMessage(Username, beginTitle);
+            Utility.WriteMessage(Password, beginTitle);
         }
 
 
