@@ -16,7 +16,7 @@ namespace D13_AccessModifiers
 
             User user01 = new User();
 
-            User user02 = new User(1, "José", "RH", DateTime.Today, "jm", "_#%uyg2");
+            User user02 = new User(1, "José Manuel", "RH", DateTime.Today, "jm", "_#%uyg2");
 
             user01.CreateUser();
 
