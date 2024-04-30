@@ -67,6 +67,7 @@ namespace D13_AccessModifiers
                 string dataInserida;
                 bool dataValida;
 
+                // Todo MRS: não fazer If dentro do While
                 do
                 {
                     Utility.WriteMessage("(DD/MM/YYYY): ");
@@ -90,6 +91,8 @@ namespace D13_AccessModifiers
             Password = Console.ReadLine();
 
         }
+
+        // Todo MRS: terminar o método mostrando as labels e indentar corretamente
         // Método para mostrar o usuário
         public void ListUser(string beginTitle = "")
         {
