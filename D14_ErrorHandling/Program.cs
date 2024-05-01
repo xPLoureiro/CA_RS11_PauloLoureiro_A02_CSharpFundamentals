@@ -14,7 +14,7 @@ namespace D14_ErrorHandling
 
             Utility.SetUnicodeConsole();
 
-            Utility.WriteTitle("Error handdling");
+            Utility.WriteTitle("Error handling");
 
             #region Sem tratamento de erros
             /*

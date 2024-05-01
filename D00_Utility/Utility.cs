@@ -20,16 +20,16 @@ namespace D00_Utility
         }
 
         // parameter vs argument
-        public static void WriteTitle(string title, string beginTitle = "")
+        public static void WriteTitle(string title, string beginTitle = "", string endTitle = "")
         {
 
             Console.ForegroundColor = ConsoleColor.Green;
 
-            Console.WriteLine(new string ('-', 60));    // para substituir "-------------------"
+            Console.WriteLine($"{beginTitle}{new string ('-', 60)}");    // para substituir "-------------------"
 
             Console.WriteLine(title.ToUpper());
 
-            Console.WriteLine(new string('-', 60));     // para substituir "-------------------"
+            Console.WriteLine($"{ new string('-', 60)}{endTitle}");     // para substituir "-------------------"
 
             Console.ForegroundColor = ConsoleColor.White;
 

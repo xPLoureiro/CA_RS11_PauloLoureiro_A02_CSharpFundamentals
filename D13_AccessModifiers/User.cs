@@ -9,9 +9,12 @@ namespace D13_AccessModifiers
 {
     internal class User
     {
+        #region Fields
         // Field
-        private DateTime registrationDate;
+        private DateTime registrationDate;  // suporte à propriedade RegistrationDate
+        #endregion
 
+        #region Properties
         // Declarar uma propriedade usando Auto-implemented properties
         internal int Id { get; }      // read-only
         internal string Name { get; set; }
@@ -24,9 +27,9 @@ namespace D13_AccessModifiers
         }
         internal string Username { get; set; }
         internal string Password { get; set; }
+        #endregion
 
-
-        // Constructors
+        #region Constructors
 
         // Susbtituto do default constructor
         internal User()
@@ -49,7 +52,9 @@ namespace D13_AccessModifiers
             Username = username;
             Password = password;
         }
+        #endregion
 
+        #region Methods
         // Método para criar um usuário
         internal void CreateUser()
         {
@@ -62,28 +67,15 @@ namespace D13_AccessModifiers
             Department = Console.ReadLine();
 
             Utility.WriteMessage("Registration date");
+
+            // validar o imput e não avançar enquanto não for data
+            // usar: TryParse e no out usar o field
+            // okToDo MRS: não fazer If dentro do While --ok20240501PL
+            while (!DateTime.TryParse(Console.ReadLine(), out registrationDate))
             {
-                DateTime registrationDate;
-                string dataInserida;
-                bool dataValida;
-
-                // Todo MRS: não fazer If dentro do While
-                do
-                {
-                    Utility.WriteMessage("(DD/MM/YYYY): ");
-                    dataInserida = Console.ReadLine();
-                    dataValida = DateTime.TryParse(dataInserida, out registrationDate);
-
-                    //if (!dataValida)
-                    //{
-                    //    Utility.WriteMessage("A data inválida, tenta novamente: ");
-                    //}
-                }
-                while (!dataValida);
-
-                Utility.WriteMessage("Data validada.");
-
+                Utility.WriteMessage("Inserir uma data válida (ex. 29/04/2024): ");
             }
+            
             Utility.WriteMessage("Username: ");
             Username = Console.ReadLine();
 
@@ -92,17 +84,27 @@ namespace D13_AccessModifiers
 
         }
 
-        // Todo MRS: terminar o método mostrando as labels e indentar corretamente
+        // okTodo MRS: terminar o método mostrando as labels e indentar corretamente --ok20240501PL
         // Método para mostrar o usuário
         internal void ListUser(string beginTitle = "")
         {
-            Utility.WriteMessage(Name, beginTitle);
-            Utility.WriteMessage(Department, beginTitle);
-            Utility.WriteMessage(Username, beginTitle);
-            Utility.WriteMessage(Password, beginTitle);
+            Utility.WriteTitle("List user", beginTitle);
+
+            Utility.WriteMessage($"Person Id: {Id}", "\n", "\n");
+            Utility.WriteMessage($"Person name: {Name}", "", "\n");
+            Utility.WriteMessage($"Department: {Department}", "", "\n");
+            Utility.WriteMessage($"Registration date: {RegistrationDate.ToShortDateString()}", "", "\n");
+            Utility.WriteMessage($"Username: {Username}", "", "\n");
+            // Utility.WriteMessage($"Password: {Password}"); // mostra password
+            Utility.WriteMessage($"Password: {OcultarPassword(Password)}");
         }
 
+        // Método para retornar * em vez dos carateres da password
+        internal string OcultarPassword(string password)
+        {
+            return new string('*', password.Length);
+        }
 
-        
+        #endregion
     }
 }

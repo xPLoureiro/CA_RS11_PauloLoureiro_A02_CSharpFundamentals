@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-// ToDo MRS: Implementar a class library D00_Utility
+// okToDo MRS: Implementar a class library D00_Utility --sem alteraçoes
 using D00_Utility;
 
 namespace D08_DataTypesManipulation
@@ -36,7 +36,7 @@ namespace D08_DataTypesManipulation
             int valor02 = 100;
             double valor03 = 2.3;
             double valor04 = -12.1;
-            double valor05 = 64;
+            //double valor05 = 64;
             double valor06 = 4;
             #endregion
             
@@ -77,7 +77,7 @@ namespace D08_DataTypesManipulation
             #region Mostrar na consola
             Utility.WriteTitle("manipulação de strings");
             Utility.WriteMessage($"Maiúsculas: {cursoCompleto01.ToUpper()}");
-            Utility.WriteMessage($"Maiúsculas: {cursoCompleto02.ToLower()}");
+            Utility.WriteMessage($"Minúsculas: {cursoCompleto02.ToLower()}");
             Utility.WriteMessage($"Esquerda (fixo): {cursoCompleto03.Substring(0, 11)}");        // Left; Informática
             Utility.WriteMessage($"Esquerda (dinâmico): {cursoCompleto02.Substring(0, cursoCompleto02.IndexOf(","))}");
             Utility.WriteMessage($"Curso: {cursoCompleto04}");
