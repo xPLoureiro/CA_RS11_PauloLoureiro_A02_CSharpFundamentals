@@ -18,14 +18,16 @@ namespace D10_LoopStructures
             string name = string.Empty;
             #endregion
 
-            #region WHILE (enquanto acondição for verdadeira)
+            #region WHILE (enquanto a condição for verdadeira)
             // O teste é feito no início
             // Não garante que seja feito uma única vez
 
-            Utility.WriteTitle("WHILE");
+            // Utility.WriteTitle("WHILE"); mudou-se para dentro do while para ser visivel depois do Console.Clear()
 
             while (string01 != "x")
             {
+                Console.Clear(); // para não acumular sucessivas mensagens de erro
+                Utility.WriteTitle("WHILE");
                 Utility.WriteMessage("Para saíres escreve x: ", "\n");
                 string01 = Console.ReadLine();
             }

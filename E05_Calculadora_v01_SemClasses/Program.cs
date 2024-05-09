@@ -12,40 +12,41 @@ namespace E05_Calculadora_v01_SemClasses
         static void Main(string[] args)
         {
             
-            /*
+            int operacao;
+            double valor01, valor02;
+            double resultado = 0;
+
             Utility.WriteTitle("Calculadora Simples\r");
 
-            Utility.WriteMessage("Escolha uma operação:");
+            Utility.WriteMessage("Escolha uma operação:", "\n", "\n");
             Utility.WriteMessage("\t1 - Adição");
             Utility.WriteMessage("\t2 - Subtração");
             Utility.WriteMessage("\t3 - Multiplicação");
             Utility.WriteMessage("\t4 - Divisão");
-            Utility.WriteMessage("Qual a operação pretendida? ");
+            Utility.WriteMessage("\nQual a operação pretendida? ");
 
-            int escolha = Convert.ToInt32(Console.ReadLine());
+            operacao = Convert.ToInt32(Console.ReadLine());
 
-            Utility.WriteMessage("Insira o primeiro valor:");
-            double valor1 = Convert.ToDouble(Console.ReadLine());
+            Utility.WriteMessage("\nInsira o primeiro valor:");
+            valor01 = Convert.ToDouble(Console.ReadLine());
 
-            Utility.WriteMessage("insira o segundo valor:");
-            double valor2 = Convert.ToDouble(Console.ReadLine());
+            Utility.WriteMessage("\ninsira o segundo valor:");
+            valor02 = Convert.ToDouble(Console.ReadLine());
 
-            double resultado = 0;
-
-            switch (escolha)
+            switch (operacao)
             {
                 case 1:
-                    resultado = valor1 + valor2;
+                    resultado = valor01 + valor02;
                     break;
                 case 2:
-                    resultado = valor1 - valor2;
+                    resultado = valor01 - valor02;
                     break;
                 case 3:
-                    resultado = valor1 * valor2;
+                    resultado = valor01 * valor02;
                     break;
                 case 4:
-                    if (valor2 != 0)
-                        resultado = valor1 / valor2;
+                    if (valor02 != 0)
+                        resultado = valor01 / valor02;
                     else
                         Utility.WriteMessage("Erro: Divisão por zero não é permitida.");
                     break;
@@ -58,7 +59,7 @@ namespace E05_Calculadora_v01_SemClasses
 
             Utility.TerminateConsole();
 
-            */
+            
         }
     }
 }

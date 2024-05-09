@@ -80,12 +80,102 @@ namespace D13_AccessModifiers
             Username = Console.ReadLine();
 
             Utility.WriteMessage("Password: ");
-            Password = Console.ReadLine();
+            //Password = Console.ReadLine();
+
+            #region ocultar carateres ao inserir a password v0
+            // ToDo: é necessário otimizar ?while c/ if?
+
+            StringBuilder password = new StringBuilder();
+            while (true)
+            {
+                var keyInfo = Console.ReadKey(true); // O parâmetro 'true' impede que a tecla pressionada seja exibida
+
+                // Verifica se a tecla enter foi pressionada
+                if (keyInfo.Key == ConsoleKey.Enter)
+                {
+                    break;
+                }
+
+                // Verifica se a tecla backspace foi pressionada
+                if (keyInfo.Key == ConsoleKey.Backspace && password.Length > 0)
+                {
+                    password.Remove(password.Length - 1, 1);
+                    Console.Write("\b \b"); // Remove o último asterisco
+                }
+                else if (keyInfo.Key != ConsoleKey.Backspace)
+                {
+                    password.Append(keyInfo.KeyChar);
+                    Console.Write("*"); // asterisco por cada tecla pressionada
+                }
+                Password = password.ToString();
+            }
+
+
+            #endregion
+
+
+            #region ocultar carateres ao inserir a password v1
+
+            /*
+            StringBuilder password = new StringBuilder();
+            ConsoleKeyInfo keyInfo;
+
+            while ((keyInfo = Console.ReadKey(true)).Key != ConsoleKey.Enter)
+            {
+                if (keyInfo.Key == ConsoleKey.Backspace && password.Length > 0)
+                {
+                    password.Remove(password.Length - 1, 1);
+                    Console.Write("\b \b");
+                }
+                else if (keyInfo.Key != ConsoleKey.Backspace)
+                {
+                    password.Append(keyInfo.KeyChar);
+                    Console.Write("*");
+                }
+            }
+            */
+
+            #endregion
+
+
+            #region ocultar carateres ao inserir a password v2          
+            /*
+            StringBuilder password = new StringBuilder();
+            ConsoleKeyInfo keyInfo;
+            
+            do
+            {
+                keyInfo = Console.ReadKey(true);
+
+                switch (keyInfo.Key)
+                {
+                    case ConsoleKey.Enter:
+                        break;
+
+                    case ConsoleKey.Backspace:
+                        if (password.Length > 0)
+                        {
+                            password.Remove(password.Length - 1, 1);
+                            Console.Write("\b \b");
+                        }
+                        break;
+
+                    default:
+                        password.Append(keyInfo.KeyChar);
+                        Console.Write("*");
+                        break;
+                }
+            }
+            while (keyInfo.Key != ConsoleKey.Enter);
+            */
+            #endregion
 
         }
 
         // okTodo MRS: terminar o método mostrando as labels e indentar corretamente --ok20240501PL
-        // Método para mostrar o usuário
+
+        #region Método para mostrar o usuário
+
         internal void ListUser(string beginTitle = "")
         {
             Utility.WriteTitle("List user", beginTitle);
@@ -98,12 +188,15 @@ namespace D13_AccessModifiers
             // Utility.WriteMessage($"Password: {Password}"); // mostra password
             Utility.WriteMessage($"Password: {OcultarPassword(Password)}");
         }
+        #endregion
 
-        // Método para retornar * em vez dos carateres da password
+        #region Método para retornar * em vez dos carateres da password
         internal string OcultarPassword(string password)
         {
-            return new string('*', password.Length);
+            return new string('*', Password.Length);
         }
+
+        #endregion
 
         #endregion
     }

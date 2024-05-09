@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D13_AccessModifiers", "D13_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D14_ErrorHandling", "D14_ErrorHandling\D14_ErrorHandling.csproj", "{BCBE1257-E9F1-4BE3-B1E5-BE5AB59A44BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E06_Calculadora_v03_ComClasses_MRS", "E06_Calculadora_v03_ComClasses_MRS\E06_Calculadora_v03_ComClasses_MRS.csproj", "{BC175CBC-2E64-4026-9DB0-85E534C36D43}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,6 +143,10 @@ Global
 		{BCBE1257-E9F1-4BE3-B1E5-BE5AB59A44BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCBE1257-E9F1-4BE3-B1E5-BE5AB59A44BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCBE1257-E9F1-4BE3-B1E5-BE5AB59A44BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC175CBC-2E64-4026-9DB0-85E534C36D43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC175CBC-2E64-4026-9DB0-85E534C36D43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC175CBC-2E64-4026-9DB0-85E534C36D43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC175CBC-2E64-4026-9DB0-85E534C36D43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

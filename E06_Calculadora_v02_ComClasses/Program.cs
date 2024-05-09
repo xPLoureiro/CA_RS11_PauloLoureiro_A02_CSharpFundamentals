@@ -45,26 +45,11 @@ namespace E06_Calculadora_v02_ComClasses
                 case "/":
                     resultado = minhaCalculadora.Dividir(num1, num2);
                     break;
-
-                /*try
-                {
-                    resultado = minhaCalculadora.Dividir(num1, num2);
-                }
-                catch (DivideByZeroException ex)
-                {
-                    Utility.WriteMessage(ex.Message);
-                    return;
-                }
-                */
-
-                default:
-                    Utility.WriteMessage("Opção inválida.");
-                    return;
-            }
-
-            Utility.WriteMessage($"Resultado: {resultado}");
-
-            Utility.TerminateConsole();
+            }       
+                    
+             Utility.WriteMessage($"Resultado: {resultado}");
+             Utility.TerminateConsole();
+          
         }
     }
 }

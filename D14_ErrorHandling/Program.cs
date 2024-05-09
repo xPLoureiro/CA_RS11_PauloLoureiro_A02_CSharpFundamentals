@@ -28,6 +28,7 @@ namespace D14_ErrorHandling
             try
             {
                 int number02;
+
                 Utility.WriteMessage("Insere um número inteiro: ");
                 number02 = Convert.ToInt16(Console.ReadLine());
             }

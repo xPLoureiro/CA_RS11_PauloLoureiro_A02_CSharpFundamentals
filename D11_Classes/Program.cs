@@ -26,14 +26,13 @@ namespace D11_Classes
             person01.City = "Cidade Sei Lá?";
             person01.Country = "Será?";
 
-            // 2. Instanciar a classe Person e imediatamente passo os valores
+            // 2. Instanciar a classe Person com o 3º constructor
 
-            Person person03 = new Person(2, "Pessoa 2");
+            Person person02 = new Person(2, "Pessoa 2");
 
-            // 3. Instanciar a classe Person e imediatamente passar os valores, com o 3º constructor
-            // era 2ª versão do  constructor 
-
-            Person person02 = new Person(3, "Pessoa 3", "123456789", "321321321", "Rua de lá", "Av. Qaz 1", "PT");
+            // 3. Instanciar a classe Person e imediatamente passar os valores, com o 2º constructor
+            
+            Person person03 = new Person(3, "Pessoa 3", "123456789", "321321321", "Rua de lá", "Av. Qaz 1", "PT");
 
 
             // 4. Usar os métodos
@@ -41,9 +40,6 @@ namespace D11_Classes
 
             person04.PersonReadData();
             person04.PersonWriteData();
-
-
-            // person01.PersonWriteData();
 
 
             // 5. Terminar

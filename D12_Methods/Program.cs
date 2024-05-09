@@ -82,19 +82,21 @@ namespace D12_Methods
 
 
             #region Método de instância
-            Utility.WriteTitle("Método de instância.", "\n");
+            Utility.WriteTitle("Método de instância.", "\n\n\n", "\n");
 
             // Chamar o método da instância
-            methods01.InstanceMethod();
+            Methods methods02 = new Methods();
 
-            /* podemos criar nova instância em vez de aproveitard e cima
+            methods02.InstanceMethod();
+
+            //methods01.InstanceMethod();
+
+            /* podemos criar nova instância em vez de aproveitar a de cima
             
              
              
              
              */ 
-     
-
 
             #endregion
 

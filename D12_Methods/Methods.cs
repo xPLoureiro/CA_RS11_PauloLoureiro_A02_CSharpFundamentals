@@ -10,8 +10,22 @@ namespace D12_Methods
     internal class Methods
     {
 
+        /*
+        public void WrongProcedure()
+        {
+            string message = "Procedimento: método não void - devolve valor.";
 
-        // public void WrongProcedure-----------------------falta
+            Utility.WriteMessage(message, "", "\n\n");
+
+            int v1, v2, res;
+
+            v1 = 10;
+            v2 = 20;
+            res = v1 + v2;
+
+            Utility.WriteMessage(res.ToString());
+        }
+        */
 
         #region Método void
         public void Procedure()
@@ -74,7 +88,7 @@ namespace D12_Methods
 
         #endregion
 
-        #region Método com pârametros por referência
+        #region Método com pârametros por referência (utilizado quando é preciso mudar dentro)
         public void PassingReferences(ref int value) // aponta para a mesma referência daquele que passou
         {
 

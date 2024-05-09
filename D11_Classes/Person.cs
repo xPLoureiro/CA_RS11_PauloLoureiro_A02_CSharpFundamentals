@@ -28,7 +28,7 @@ namespace D11_Classes
     internal class Person
     {
 
-        #region Fields (private) // variáveis privados das propriedadespara utilização privada das variáveis
+        #region Fields (private) // variáveis privadas das propriedades (para utilização privada das variáveis)
         private string city;        // minúsculas  (antigamente era assim _city)
         private string country;     // minúsculas
         private string address;
@@ -39,7 +39,7 @@ namespace D11_Classes
         #region Properties (public ou internal)
         
 
-        #region Auto-impemented properties 2.0  // não é preciso declara variáveis
+        #region Auto-implemented properties 2.0  // não é preciso declarar variáveis
 
         public int Id { get; set; } 
         public string Name { get; set; }
@@ -48,7 +48,7 @@ namespace D11_Classes
         // public string Address { get; set; }  passou a clássica
         #endregion
 
-        #region Classic properties 1.0
+        #region Classic properties 1.0 (requer o Field)
         public string Address
         {
             get { return address; }
@@ -58,7 +58,7 @@ namespace D11_Classes
 
         public string City
         { 
-            get { return city; }       // ler o valor da propriedade
+            get { return city; }              // ler o valor da propriedade
             set { city = value; }             // escrever o valor da propriedade
                 
         }
@@ -66,7 +66,7 @@ namespace D11_Classes
 
         #endregion
 
-        #region Bodie-expression properties 3.0
+        #region Bodie-expression properties 3.0 (requer o Field)
         public string Country
         {
             get => country;                 // => lambda operator
