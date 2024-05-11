@@ -23,7 +23,7 @@ namespace D07_DataTypesConversion
 
             #region Sem conversão
             Console.WriteLine(string01 + int01);    // 110 concatenar
-            Console.WriteLine(int01 + string01);   // 101 concatenar 
+            Console.WriteLine(int01 + string01);    // 101 concatenar 
             Console.WriteLine();
             #endregion
 
