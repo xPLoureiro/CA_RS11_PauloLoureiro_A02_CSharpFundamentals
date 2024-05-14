@@ -10,7 +10,6 @@ namespace D15_Collections_ArrayList
 {
     internal class PersonUtility
     {
-
         #region Methods
         // Métodos para listar as coleções (que não person)
         internal static void ListData(ArrayList list) // static não é preciso instanciar e não devolve
@@ -19,10 +18,7 @@ namespace D15_Collections_ArrayList
             {
                 Utility.WriteMessage($"{item}", "", "\n");
             }
-
         }
-
         #endregion
-
     }
 }

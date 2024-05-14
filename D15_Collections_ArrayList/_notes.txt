@@ -4,3 +4,34 @@
             //      1 método: ListPerson
 
 
+-------------------			
+Estruturas de dados	(em memória)		
+-------------------			
+
+Variables			
+
+Arrays: 
+    Vetores (single)
+    Matrizes (multi)			
+
+Collections
+    Normal
+    Generic
+
+        -------------------	
+        Normal Collections - ArrayList
+        -------------------	
+        ArrayList não é fortemente tipada (n~so strongly typed)
+        Pode conter qualqure tipo de dados
+
+
+        -------------------	
+        Generic Collections		
+        -------------------	
+            fortemente tipada			
+            constraint do data type			
+            List<T>			
+                Queue<T>: fila - FIFO (first-in-first-out)			
+                Stack<T>: pilha - LIFO (last-in-first-out)			
+
+

@@ -12,15 +12,18 @@ namespace D15_Collections_ArrayList
     {
         static void Main(string[] args)
         {
-
+            // Classe Person:
+            //      2 propriedades: Name, City
+            //      2 constructores
+            //      1 método: ListPerson
 
             Utility.SetUnicodeConsole();
 
             #region ArrayList: multi tipos + inteiros (só a intenção!)
 
-            // 1. Instanciar (incovar a ArrayList)
+            // 1. Instanciar (invocar a ArrayList)
             ArrayList listMulti = new ArrayList();
-            ArrayList listIntegers = new ArrayList();
+            ArrayList listIntegers = new ArrayList();   //aqui não serão só Inteiros é enganador…
 
             // 2. Adicionar valores de tipos diferentes (um a um)
             listMulti.Add(10);
@@ -28,7 +31,7 @@ namespace D15_Collections_ArrayList
             listMulti.Add(false);
             listMulti.Add(DateTime.Today);
 
-            // 3. Adicionar valores (5) do tipo inteiro automaticamente
+            // 3. Adicionar 5 valores do tipo inteiro automaticamente
             for (int i = 0; i < 5; i++)
             {
                 listIntegers.Add(i);
@@ -44,17 +47,16 @@ namespace D15_Collections_ArrayList
             Utility.WriteMessage($"Nº de elementos - listIntegers; {listIntegers.Count}", "", "\n\n");
 
             // 5. Listar
-            Utility.WriteTitle("ArrayList - listMulti", "\n\n", "\n\n");
+            Utility.WriteTitle("ArrayList - listMulti", "", "\n");
             PersonUtility.ListData(listMulti);
 
-            Utility.WriteTitle("ArrayList - listIntegers", "\n\n", "\n\n");
+            Utility.WriteTitle("ArrayList - listIntegers", "", "\n");
             PersonUtility.ListData(listIntegers);
 
             // 6. Listar, ordenando
-            Utility.WriteTitle("ArrayList - listIntegers ordenada", "\n\n", "\n\n");
+            Utility.WriteTitle("ArrayList - listIntegers ordenada", "", "\n");
             listIntegers.Sort();
             PersonUtility.ListData(listIntegers);
-
             #endregion
 
 
@@ -79,7 +81,6 @@ namespace D15_Collections_ArrayList
             // PersonUtility.ListData(listPerson); tb não se consegue utilizar o outro método
 
             Person.ListPerson(listPerson);
-
             #endregion
 
             Utility.TerminateConsole();
