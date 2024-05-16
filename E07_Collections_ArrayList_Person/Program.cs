@@ -30,7 +30,7 @@ namespace E07_Collections_ArrayList_Person
                 listPerson.Add(person);
                 Utility.WriteMessage($"Continue? (y) : ", "", "\n");
                 control = Console.ReadLine();
-            } while (control.ToLower() == "y") ;
+            } while (control.ToLower() == "y");
             #endregion
 
             #region List person

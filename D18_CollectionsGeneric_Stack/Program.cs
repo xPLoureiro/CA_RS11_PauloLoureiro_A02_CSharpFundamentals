@@ -13,7 +13,7 @@ namespace D18_CollectionsGeneric_Stack
         {
             Utility.SetUnicodeConsole();
 
-            #region Stack (fila = LIFO)
+            #region Stack (pilha = FILO)
             Stack<int> stackIntegers = new Stack<int>();
 
             stackIntegers.Push(0);
@@ -28,7 +28,7 @@ namespace D18_CollectionsGeneric_Stack
 
             foreach (int item in stackIntegers)
             {
-                Utility.WriteMessage(item.ToString(), "\n");    
+                Utility.WriteMessage(item.ToString(), "\n");    // 3, 2, 1, 0
             }
 
             Utility.WriteTitle("POP", "\n\n\n");
