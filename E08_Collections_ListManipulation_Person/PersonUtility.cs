@@ -12,7 +12,7 @@ namespace E08_Collections_ListManipulation_Person
         internal static string ShowMenu()
         {
 
-            string task;
+            string option;
             bool founded;
 
             string[,] menu =
@@ -45,15 +45,15 @@ namespace E08_Collections_ListManipulation_Person
 
                 }
 
-                Utility.WriteMessage("Task > ", "\n");
+                Utility.WriteMessage("Option > ", "\n");
 
-                task = Console.ReadLine();
+                option = Console.ReadLine();
 
                 founded = false;
 
                 for (int i = 0; i < menu.GetLength(0); i++)
                 {
-                    if (menu[i, 0] == task)
+                    if (menu[i, 0] == option)
                     {
                         founded = true;
                         break;
@@ -61,7 +61,17 @@ namespace E08_Collections_ListManipulation_Person
                 }
             } while (!founded);
 
-            return task;
+            return option;
         }
+        internal static string ContinueOption()
+        {
+            string decision;
+
+            Utility.WriteMessage("For continue press 'y': ", "\n");
+            decision = Console.ReadLine().ToLower();
+
+            return decision;
+        }
+
     }
 }

@@ -12,16 +12,16 @@ namespace E08_Collections_ListManipulation_Person
     internal class Person
     {
         #region Properties
-        internal static int NextId { get; set; } = 1;
         internal int Id { get; set; }
+        internal static int NextId { get; set; } = 1;
         internal string Name { get; set; }
-        internal string Task { get; set; }
+        internal string Option { get; set; }
         #endregion
 
         #region Constructors
         internal Person()
         {
-            Id = 0;
+            Id = NextId++;
             Name = string.Empty;
         }
 
@@ -37,83 +37,105 @@ namespace E08_Collections_ListManipulation_Person
         #region Methods
         internal void Manipulation()
         {
-            switch (Task)
+            switch (Option)
             {
                 case "1":
-                    AddPerson(listPerson);
+                    do
+                    {
+                        Utility.WriteMessage("Name:");
+                        string name = Console.ReadLine();
+                        AddPerson(new Person { Id = NextId++, Name = name });
+                    } while (PersonUtility.ContinueOption() == "y"); 
                     break;
                 case "2":
-                    //InsertPerson(listPerson);
+                    do
+                    {
+                        Utility.WriteMessage("Choose index");
+                        int index = Convert.ToInt32(Console.ReadLine());
+                        Utility.WriteMessage("Name");
+                        Name = Console.ReadLine();
+                        AddPerson(new Person());
+                    } while (PersonUtility.ContinueOption() == "y");
                     break;
                 case "3":
-                    Console.WriteLine("Enter person's ID to find:");
-                    Id = Convert.ToInt32(Console.ReadLine());
-                    Person foundPerson = FindById(listPerson, Id);
-                    if (foundPerson != null)
+                    do
                     {
-                        Console.WriteLine($"Person found: {foundPerson.Name}");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Person not found!");
-                    }
+                        Utility.WriteMessage("Enter person's ID to find:");
+                        int id = Convert.ToInt32(Console.ReadLine());
+                        Person foundPerson = FindPersonById(id);
+                        if (foundPerson != null)
+                        {
+                            Utility.WriteMessage($"Person found: {foundPerson.Name}");
+                        }
+                        else
+                        {
+                            Utility.WriteMessage("Person not found!");
+                        }
+                    } while (PersonUtility.ContinueOption() == "y");
                     break;
                 case "4":
-                    Console.WriteLine("Remove Person by Id:");
-                    int idToRemove = Convert.ToInt32(Console.ReadLine());
-                    RemovePersonById(listPerson, Id);
+                    do
+                    {
+                        Utility.WriteMessage("Remove Person by Id:");
+                        Id = Convert.ToInt32(Console.ReadLine());
+                        if (RemovePersonById(Id))
+                        {
+                            Utility.WriteMessage("Person removed:");
+                        }
+                        else
+                        {
+                            Utility.WriteMessage("Not possible remove:");
+                        }
+                    } while (PersonUtility.ContinueOption() == "y");
                     break;
                 case "5":
-                    SortById(listPerson);
+                    SortById();
                     break;
                 case "6":
-                    SortByName(listPerson);
+                    SortByName();
                     break;
                 case "7":
-                    ShowList(listPerson);
+                    ShowList();
+                    break;
+                default:
                     break;
             }
+            Option = PersonUtility.ShowMenu();
         }
 
-        internal static void AddPerson(List<Person> listPerson, Person person)
+        internal void AddPerson(Person person)
         {
-            person.Id = NextId++;
-            Console.WriteLine("Person name:");
-            person.Name = Console.ReadLine();
             listPerson.Add(person);
+            //Console.WriteLine("Person name:");
+            //Name = Console.ReadLine();
+            //listPerson.Add(person);
         }
 
         // https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.add?view=netframework-4.7.2
 
-        internal static void InsertPerson(List<Person> listPerson, int index, Person person)
+        internal void InsertPerson( int index, Person person)
         {
-            Console.WriteLine("Index:");
-            index = Convert.ToInt32(Console.ReadLine());
             if (index >= 0 && index <= listPerson.Count)
             {
-                person.Id = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Person name:");
-                person.Name = Console.ReadLine();
                 listPerson.Insert(index, person);
-            }
-            else
-            {
-                Console.WriteLine("Index not found!");
             }
         }
 
         // https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.insert?view=netframework-4.7.2
 
-        internal static Person FindById(List<Person> listPeople, int id)
+        internal Person FindPersonById(int id)
         {
-            return listPeople.FirstOrDefault(p => p.Id == id);
+            return listPerson.FirstOrDefault(p => p.Id == id);
         }
 
-        // https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.find?view=netframework-4.7.2
+        // https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.firstordefault?view=netframework-4.7.2
 
-        internal static void RemovePersonById(List<Person> listPerson, int Id)
+        internal bool RemovePersonById(int id)
         {
-            Person personToRemove = FindById(listPerson, Id);
+            Person personToRemove = FindPersonById(id);
+            return personToRemove != null && listPerson.Remove(personToRemove);
+
+            /*
             if (personToRemove != null)
             {
                 listPerson.Remove(personToRemove);
@@ -123,11 +145,12 @@ namespace E08_Collections_ListManipulation_Person
             {
                 Console.WriteLine("Not removed");
             }
+            */
         }
 
         //https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.remove?view=netframework-4.7.2
 
-        internal static void SortById(List<Person> listPerson)
+        internal void SortById()
         {
             Utility.WriteMessage("Sort by Id");
             listPerson.Sort((p1, p2) => p1.Id.CompareTo(p2.Id));
@@ -135,13 +158,13 @@ namespace E08_Collections_ListManipulation_Person
 
         //https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.sort?view=netframework-4.7.2
 
-        internal static void SortByName(List<Person> listPerson)
+        internal void SortByName()
         {
             Utility.WriteMessage("Sort by name");
             listPerson.Sort((p1, p2) => p1.Name.CompareTo(p2.Name));
         }
 
-        internal static void ShowList(List<Person> listPerson)
+        internal void ShowList()
         {
             if (listPerson.Count == 0)
             {
@@ -156,9 +179,5 @@ namespace E08_Collections_ListManipulation_Person
             }
         }
         #endregion
-
-
-
-
     }
 }

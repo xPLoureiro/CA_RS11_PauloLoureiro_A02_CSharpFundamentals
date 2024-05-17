@@ -79,6 +79,4 @@ namespace D00_Utility
             Console.Clear();
         }
     }
-
-
 }

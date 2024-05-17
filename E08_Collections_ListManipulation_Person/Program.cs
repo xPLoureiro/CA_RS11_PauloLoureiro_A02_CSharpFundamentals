@@ -15,24 +15,14 @@ namespace E08_Collections_ListManipulation_Person
         {
             Utility.SetUnicodeConsole();
 
-            /*
-            Person person01 = new Person("Manuel");
-            Person person02 = new Person("Maria");
-            Person person03 = new Person("José");
-
-            listPerson.Add(person01);
-            listPerson.Add(person02);
-            listPerson.Add(person03);
-            */
-
             Person person = new Person();
             string control;
 
             try
             {
-                person.Task = PersonUtility.ShowMenu();
+                person.Option = PersonUtility.ShowMenu();
 
-                if (person.Task != "8")
+                if (person.Option != "8")
                 {
                     person.Manipulation();
                 }
@@ -43,9 +33,9 @@ namespace E08_Collections_ListManipulation_Person
             }
             finally
             {
-                //Utility.WriteMessage($"Deseja continuar? (y) : ", "", "\n");
-                //control = Console.ReadLine();
-                //if (control.ToLower() != "y")
+                Utility.WriteMessage($"For continue press 'y': ", "", "\n");
+                control = Console.ReadLine();
+                if (control.ToLower() != "y")
                 {
                     Utility.TerminateConsole();
                 }
