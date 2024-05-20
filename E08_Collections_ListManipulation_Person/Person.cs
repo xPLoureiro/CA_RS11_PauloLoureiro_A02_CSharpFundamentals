@@ -106,6 +106,7 @@ namespace E08_Collections_ListManipulation_Person
         internal void AddPerson(Person person)
         {
             listPerson.Add(person);
+
             //Console.WriteLine("Person name:");
             //Name = Console.ReadLine();
             //listPerson.Add(person);

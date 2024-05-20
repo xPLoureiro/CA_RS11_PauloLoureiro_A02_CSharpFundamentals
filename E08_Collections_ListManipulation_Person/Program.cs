@@ -9,7 +9,7 @@ namespace E08_Collections_ListManipulation_Person
 {
     internal class Program
     {
-        //static List<Person> listPerson = new List<Person>(); // pública à classe
+        static List<Person> listPerson = new List<Person>(); //  pública à classe
 
         static void Main(string[] args)
         {

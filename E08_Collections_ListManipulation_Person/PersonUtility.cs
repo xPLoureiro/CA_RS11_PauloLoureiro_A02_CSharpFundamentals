@@ -72,6 +72,5 @@ namespace E08_Collections_ListManipulation_Person
 
             return decision;
         }
-
     }
 }
