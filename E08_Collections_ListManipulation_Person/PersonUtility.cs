@@ -9,6 +9,9 @@ namespace E08_Collections_ListManipulation_Person
 {
     internal class PersonUtility
     {
+
+        // Todo MRS: o método chama-se ShowMenu, no entanto tem 3 responsa bilidades: mostrar, coletar a escolha do user e testar.
+        // Ou mudas o nome do método ou divides em métodos mais granulares (melhor!)
         internal static string ShowMenu()
         {
 
