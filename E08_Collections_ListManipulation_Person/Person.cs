@@ -35,6 +35,7 @@ namespace E08_Collections_ListManipulation_Person
         List<Person> listPerson = new List<Person>();
 
         #region Methods
+        // Todo MRS: os métodos devem ter nomes de acção: Este nome não diz nada acerca do que se está a manipular
         internal void Manipulation()
         {
             switch (Option)
@@ -126,6 +127,7 @@ namespace E08_Collections_ListManipulation_Person
 
         internal Person FindPersonById(int id)
         {
+            // Todo MRS: o que faz este método? FirstOrDefault
             return listPerson.FirstOrDefault(p => p.Id == id);
         }
 
